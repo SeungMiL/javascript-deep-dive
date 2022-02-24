@@ -116,3 +116,43 @@ console.log(score); // ??
 위 예제는 값을 할당한 후 변수선언을 한 경우이다
 이런 경우에는 마지막 `console.log(score);` 은 값의 할당보다
 변수 선언이 늦게 나왔기에 undefined 가 나온다.
+
+---
+
+### 1.6 값의 재할당
+
+```js
+var score = 80; // 변수 선언과 값의 할당
+score = 90;     // 값의 재할당
+```
+만약 예제와 같이 값을 재할당할 수 없어서 변수에 저장된 값을 변경할 수 없다면 변수가 아니라 **상수**라 한다.
+
+변수를 선언하고 값을 할당 후 다시 재할당을 했을때 불필요해진 값들은 가비지 콜렉터에 의해 메모리에서 자동 해제 된다. 단, 메모리에서 언제 해제될지는 예측할 수 없다.
+
+**※가비지 콜렉터**
+* 할당한 메모리 공간을 주기적으로 검사하여 더이상 사용되지 않는 메모리를 해제하는 기능을 말한다.
+* 더이상 사용되지 않는 메모리란 간단히 말하자면 어떤 식별자도 참조하지 않는 메모리 공간을 의미한다 => 메모리 누수를 방지한다.
+
+---
+
+### 1.7 식별자 네이밍 규칙
+
+4가지 유형의 네이밍 컨벤션이 자주 사용된다
+
+```js
+// 카멜 케이스 (camelCase)
+var firstName;
+
+// 스네이크 케이스 (snake_case)
+var first_name;
+
+// 파스칼 케이스 (PascalCase)
+var FirstName;
+
+// 헝가리언 케이스 (typeHungarianCase)
+var strFirstName; // type + identifier
+var $elem = document.getElementById('myId'); // DOM 노드
+var observable$ = fromEvent(document, 'click'); // RxJS 옵저버블
+```
+
+코드 전체의 가독성을 높이려면 카멜 케이스와 파스칼 케이스를 따르는 것이 유리하다.
